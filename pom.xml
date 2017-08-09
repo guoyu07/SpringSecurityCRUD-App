@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.spring.app</groupId>
+    <artifactId>SpringWebApp</artifactId>
+    <version>1.0</version>
+
+    <packaging>war</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.eclipse.jetty</groupId>-->
+            <!--<artifactId>jetty-maven-plugin</artifactId>-->
+            <!--<version>9.4.6.v20170531</version>-->
+            <!--<configuration>-->
+            <!--<scanIntervalSeconds>2</scanIntervalSeconds>-->
+            <!--<httpConnector>-->
+            <!--<port>9999</port>-->
+            <!--</httpConnector>-->
+            <!--<webApp>-->
+            <!--<contextPath>/spring</contextPath>-->
+            <!--</webApp>-->
+            <!--</configuration>-->
+
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+    <properties>
+        <spring.context.ver>4.3.5.RELEASE</spring.context.ver>
+        <sprig.jpa.ver>2.0.8</sprig.jpa.ver>
+    </properties>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.2.10.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.2.10.Final</version>
+        </dependency>
+
+        <!--Spring-->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.context.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.context.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.context.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jpa</artifactId>
+            <version>${sprig.jpa.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.context.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.context.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring.context.ver}</version>
+        </dependency>
+
+        <!--Servlets JSL-->
+
+        <dependency>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+            <version>1.2.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
