@@ -12,15 +12,29 @@
     <title>Main page</title>
 </head>
 <body>
-<spring:form modelAttribute="prod_from_ui" method="post" action="/springmvc/products/add">
-    <table width="350px">
-        <tr><td>Name: <spring:input path="name"/></tr><td/>
-        <tr><td>Manufacturer: <spring:input path="manufacturer"/></tr><td/>
-        <tr><td>Description: <spring:input path="description"/></tr><td/>
-        <tr><td>Price: <spring:input path="price"/></tr><td/>
-        <tr><td><spring:button>Add</spring:button></tr><td/>
-    </table>
-</spring:form>
-<a href="/springmvc/products/allprod">All products</a>
+<table width="300px" style="padding: 1%">
+    <spring:form modelAttribute="prod_from_ui" method="post" action="/springmvc/products/add">
+        <tr>
+            <td>Name:<td/>
+            <td><spring:input path="name"/><td/>
+        </tr>
+        <tr>
+            <td>Manufacturer:<td/>
+            <td><spring:input path="manufacturer"/><td/>
+        </tr>
+        <tr>
+            <td>Description:<td/>
+            <td><spring:input path="description"/><td/>
+        </tr>
+        <tr>
+            <td>Price:<td/>
+            <td><spring:input path="price"/><td/>
+        </tr>
+        <tr>
+            <td align="right" colspan="3" style="padding-top: 10px"><spring:button>Add</spring:button></td>
+        </tr>
+    </spring:form>
+</table>
+<a href="/springmvc/products/allprod" style="padding-left: 1%">All products</a>
 </body>
 </html>

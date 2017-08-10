@@ -39,8 +39,7 @@
     </build>
 
     <properties>
-        <spring.context.ver>4.3.5.RELEASE</spring.context.ver>
-        <sprig.jpa.ver>2.0.8</sprig.jpa.ver>
+        <spring.context.ver>4.3.9.RELEASE</spring.context.ver>
     </properties>
 
 
@@ -95,11 +94,11 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.context.ver}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jpa</artifactId>
-            <version>${sprig.jpa.ver}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-jpa</artifactId>-->
+            <!--<version>${sprig.jpa.ver}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -107,7 +106,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
+            <artifactId>spring-tx</artifactId>
             <version>${spring.context.ver}</version>
         </dependency>
         <dependency>
@@ -131,6 +130,13 @@
             <version>1.2</version>
         </dependency>
 
+        <!--AOP-->
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.10</version>
+        </dependency>
     </dependencies>
 
 

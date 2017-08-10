@@ -21,14 +21,14 @@ public class DaoImpl implements Dao {
     }
 
     public void create(Product product) {
-        Session session = sessionFactory.openSession();
+        Session session = sessionFactory.getCurrentSession();
 
         session.save(product);
 
     }
 
     public Product read(int id) {
-        Session session = sessionFactory.openSession();
+        Session session = sessionFactory.getCurrentSession();
         return session.get(Product.class,id);
     }
 
@@ -38,19 +38,17 @@ public class DaoImpl implements Dao {
 
     public void delete(int id) {
 
-        Session session = sessionFactory.openSession();
-//        session.getTransaction().begin();
+        Session session = sessionFactory.getCurrentSession();
         Product product = session.get(Product.class, id);
         if (product != null) {
             session.delete(product);
         }
-//        session.getTransaction().commit();
     }
 
     @SuppressWarnings("unchecked")
     public List<Product> readAllProduct() {
 
-        Session session = sessionFactory.openSession();
+        Session session = sessionFactory.getCurrentSession();
 
         return (List<Product>) session.createQuery("from Product").list();
     }
