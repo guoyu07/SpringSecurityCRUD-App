@@ -10,7 +10,7 @@ import ua.spring.app.entity.Product;
 import java.util.List;
 
 @Repository
-public class DaoImpl implements Dao {
+public class ProductDaoImpl implements ProductDao {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -29,11 +29,13 @@ public class DaoImpl implements Dao {
 
     public Product read(int id) {
         Session session = sessionFactory.getCurrentSession();
-        return session.get(Product.class,id);
+        return session.get(Product.class, id);
     }
 
     public void update(Product product) {
+        Session session = sessionFactory.getCurrentSession();
 
+        session.update(product);
     }
 
     public void delete(int id) {

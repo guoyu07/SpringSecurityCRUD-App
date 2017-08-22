@@ -44,3 +44,23 @@ CREATE TABLE `products` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2017-08-09 11:43:52
+CREATE TABLE `users` (
+  `login` varchar(225) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`login`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `user_roles` (
+  `role_id` int(11) NOT NULL,
+  `user_login` varchar(225) NOT NULL,
+  KEY `user_roles_users_login_fk` (`user_login`),
+  KEY `user_roles_roles_id_fk` (`role_id`),
+  CONSTRAINT `user_roles_roles_id_fk` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `user_roles_users_login_fk` FOREIGN KEY (`user_login`) REFERENCES `users` (`login`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

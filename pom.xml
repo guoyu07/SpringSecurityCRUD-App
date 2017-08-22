@@ -95,9 +95,9 @@
             <version>${spring.context.ver}</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-jpa</artifactId>-->
-            <!--<version>${sprig.jpa.ver}</version>-->
+        <!--<groupId>org.springframework</groupId>-->
+        <!--<artifactId>spring-jpa</artifactId>-->
+        <!--<version>${sprig.jpa.ver}</version>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -114,16 +114,53 @@
             <artifactId>spring-aspects</artifactId>
             <version>${spring.context.ver}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.11.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+            <version>1.5.4.RELEASE</version>
+        </dependency>
+
+        <!--Spring Security-->
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>4.2.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>4.2.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>4.2.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>4.2.3.RELEASE</version>
+        </dependency>
 
         <!--Servlets JSL-->
 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet.jsp.jstl</groupId>
             <artifactId>javax.servlet.jsp.jstl-api</artifactId>
             <version>1.2.1</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>

@@ -4,7 +4,7 @@ import ua.spring.app.entity.Product;
 
 import java.util.List;
 
-public interface Dao {
+public interface ProductDao {
 
     void create(Product product);
 

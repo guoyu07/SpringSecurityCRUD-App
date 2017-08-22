@@ -3,7 +3,8 @@ package ua.spring.app.dao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ua.spring.app.entity.Product;
-import ua.spring.app.service.MyService;
+import ua.spring.app.service.ProductService;
+
 
 public class DaoTest {
     public static void main(String[] args) {
@@ -16,8 +17,7 @@ public class DaoTest {
 
       ApplicationContext applicationContext = new ClassPathXmlApplicationContext("WEB-INF/spring/applicationContext.xml");
 
-        MyService myService = ((MyService) applicationContext.getBean("myService"));
-        myService.delete(2);
-
+        ProductService productService = ((ProductService) applicationContext.getBean("productService"));
+        productService.delete(2);
     }
 }
