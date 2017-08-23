@@ -5,4 +5,6 @@ import ua.spring.app.entity.User;
 public interface UserDao {
 
     User getUserById(String login);
+
+    void saveUser(User user);
 }

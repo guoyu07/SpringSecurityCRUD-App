@@ -8,6 +8,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <%--<%@page session="false" %>--%>
 
 <html>
@@ -95,6 +96,6 @@
 <c:if test="${empty products}">Your list doesn't any products</c:if>
 <br/>
 <br/>
-<a href="/springmvc">Go back</a>
+<a href="${contextPath}/products">Go back</a>
 </body>
 </html>

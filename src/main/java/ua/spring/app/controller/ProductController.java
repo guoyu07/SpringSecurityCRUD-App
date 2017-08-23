@@ -17,6 +17,15 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @GetMapping
+    public ModelAndView setModelAndView() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("prod_from_ui", new Product());
+        modelAndView.setViewName("index");
+
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public ModelAndView addProduct(@ModelAttribute("prod_from_ui") Product product) {
 

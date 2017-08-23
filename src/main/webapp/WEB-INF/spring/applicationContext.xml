@@ -16,7 +16,9 @@
 
     <context:component-scan base-package="ua"/>
 
-    <mvc:view-controller path="/" view-name="index"/>
+    <mvc:view-controller path="/registration" view-name="registration"/>
+    <mvc:view-controller path="/products" view-name="index"/>
+    <mvc:redirect-view-controller path="/" redirect-url="/products"/>
 
     <bean id="servlet" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>

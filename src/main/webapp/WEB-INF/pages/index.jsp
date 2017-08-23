@@ -16,7 +16,7 @@
 </head>
 <body>
 <table width="300px" style="padding: 1%">
-    <spring:form modelAttribute="prod_from_ui" method="post" action="${contextPath}/products/add">
+    <sec:authorize access="hasRole('ADMIN')"><spring:form modelAttribute="prod_from_ui" method="post" action="${contextPath}/products/add">
         <tr>
             <td>Name:<td/>
             <td><spring:input path="name"/><td/>
@@ -36,7 +36,7 @@
         <tr>
             <td align="right" colspan="3" style="padding-top: 10px"><spring:button>Add</spring:button></td>
         </tr>
-    </spring:form>
+    </spring:form></sec:authorize>
 </table>
 <a href="${contextPath}/products/allprod" style="padding-left: 1%">All products</a>
 

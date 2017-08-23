@@ -12,6 +12,11 @@ public class UserDaoImpl implements UserDao {
     private SessionFactory sessionFactory;
 
     @Override
+    public void saveUser(User user) {
+        sessionFactory.getCurrentSession().save(user);
+    }
+
+    @Override
     public User getUserById(String login) {
         return sessionFactory.getCurrentSession().get(User.class, login);
     }
