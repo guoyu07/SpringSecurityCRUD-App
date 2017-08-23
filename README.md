@@ -12,6 +12,7 @@ Used technologies:
 - ApacheTomcat9
 - JSP(JSTL), SpringTagLib, SpringSecurityTabLib
 - HTML, CSS
+- JSON
 
 Rescources:
 - scr/rescources/prod_manager.sql - (DataBase structure and tables script)
@@ -20,6 +21,3 @@ Rescources:
 Need will download:
 - ApacheTomcat9
 - MySQL(server, workbench(Optional))
-
-**For create new User, you should write this link in your browser http://localhost:port/springmvc/registration
-

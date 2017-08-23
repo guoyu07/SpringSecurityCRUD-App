@@ -71,6 +71,7 @@ public class ProductController {
     @ResponseBody
     public Product searchById(@ModelAttribute("id") int id) {
         Product product = productService.read(id);
+        if (product==null)return new Product("Product with id: "+id+" dont exist!","Product with id: "+id+" dont exist!",0,"Product with id: "+id+" dont exist!");
         return product;
     }
 

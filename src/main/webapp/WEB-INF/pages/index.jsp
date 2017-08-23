@@ -42,15 +42,19 @@
 
 <br/>
 <br/>
-<table>
-    <tr><td>Search by ID</td></tr>
+<table style="
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: black solid 1px;
+    border-bottom: black solid 1px;">
+    <tr><td colspan="2" align="center">Search by ID</td></tr>
     <form action="${contextPath}/products/searching" method="get">
-       <tr><td><input name="id" type="text" required></td></tr>
-        <tr><td><button>Find</button></td></tr>
+       <tr><td>Enter product id: </td><td><input name="id" type="text" required></td></tr>
+        <tr><td colspan="2" align="right"><button>Find</button></td></tr>
     </form>
 </table>
 <br/>
 <br/>
-<a href="${contextPath}/logout">LogOut</a>
+<a href="${contextPath}/logout" style="padding-left: 120px">LogOut</a>
 </body>
 </html>

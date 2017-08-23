@@ -15,23 +15,29 @@
     <title>Registration</title>
 </head>
 <body>
-<form:form action="${contextPath}/registration"  method="POST" modelAttribute="userForRegist">
-    <h2 class="form-signin-heading">Create your account</h2>
-    <spring:bind path="login">
-        <div class="form-group ${status.error ? 'has-error' : ''}">
-            <form:input type="text" path="login" placeholder="Login"
-                        autofocus="true"/>
-        </div>
-    </spring:bind>
+<table>
+    <form:form action="${contextPath}/registration" method="POST" modelAttribute="userForRegist">
+        <h2 class="form-signin-heading">Create your account</h2>
 
-    <spring:bind path="password">
-        <div class="form-group ${status.error ? 'has-error' : ''}">
-            <form:input type="password" path="password" placeholder="Password"/>
-        </div>
-    </spring:bind>
+        <spring:bind path="login">
+            <tr>
+                <td><form:input type="text" path="login" placeholder="Login" autofocus="true"/></td>
+            </tr>
+
+        </spring:bind>
+
+        <spring:bind path="password">
+            <tr>
+                <td><form:input type="password" path="password" placeholder="Password"/></td>
+            </tr>
+        </spring:bind>
 
 
-    <button type="submit">Submit</button>
-</form:form>
+        <tr>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </form:form></table>
 </body>
 </html>
