@@ -15,27 +15,27 @@
     <title>Registration</title>
 </head>
 <body>
-<table>
+<table align="center" style="padding-top: 10%; font-family: monospace">
     <form:form action="${contextPath}/registration" method="POST" modelAttribute="userForRegist">
-        <h2 class="form-signin-heading">Create your account</h2>
+        <tr><td><h2 align="center" style=" font-size: 20px; ">Create your account</h2></td></tr>
 
         <spring:bind path="login">
             <tr>
-                <td><form:input type="text" path="login" placeholder="Login" autofocus="true"/></td>
+                <td align="center"><form:input cssStyle="font-size: 15px" type="text" path="login" placeholder="Login" autofocus="true"/></td>
             </tr>
 
         </spring:bind>
 
         <spring:bind path="password">
             <tr>
-                <td><form:input type="password" path="password" placeholder="Password"/></td>
+                <td align="center" style="padding-top: 5px"><form:input cssStyle="font-size: 15px" type="password" path="password" placeholder="Password"/></td>
             </tr>
         </spring:bind>
 
 
         <tr>
-            <td>
-                <button type="submit">Submit</button>
+            <td align="center" style="padding-top: 10px">
+                <button type="submit" style="height: 25px; width: 60px; font-family: monospace; font-size: 13px">Create</button>
             </td>
         </tr>
     </form:form></table>

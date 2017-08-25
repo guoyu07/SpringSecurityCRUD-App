@@ -15,11 +15,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logOut() {
-        return "redirect:/login?logout";
-    }
-
 
     @GetMapping
     public ModelAndView registration(ModelAndView modelAndView) {
@@ -33,6 +28,6 @@ public class UserController {
     public String addUser(@ModelAttribute("userForRegist") User user) {
         userService.saveUser(user);
 
-        return "redirect:/";
+        return "redirect:/login?usercreated";
     }
 }
