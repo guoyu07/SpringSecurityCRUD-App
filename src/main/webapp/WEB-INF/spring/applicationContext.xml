@@ -18,6 +18,7 @@
 
     <mvc:view-controller path="/registration" view-name="registration"/>
     <mvc:view-controller path="/products" view-name="index"/>
+    <mvc:view-controller path="/" view-name="login_page"/>
 
     <bean id="servlet" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
