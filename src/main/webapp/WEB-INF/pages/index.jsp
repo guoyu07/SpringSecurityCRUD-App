@@ -19,19 +19,19 @@
     <sec:authorize access="hasRole('ADMIN')"><spring:form modelAttribute="prod_from_ui" method="post" action="${contextPath}/products/add">
         <tr>
             <td>Name:<td/>
-            <td><spring:input path="name"/><td/>
+            <td><spring:input path="name" required="required"/><td/>
         </tr>
         <tr>
             <td>Manufacturer:<td/>
-            <td><spring:input path="manufacturer"/><td/>
+            <td><spring:input path="manufacturer" required="required"/><td/>
         </tr>
         <tr>
             <td>Description:<td/>
-            <td><spring:input path="description"/><td/>
+            <td><spring:input path="description" /><td/>
         </tr>
         <tr>
             <td>Price:<td/>
-            <td><spring:input path="price"/><td/>
+            <td><spring:input path="price" required="required"/><td/>
         </tr>
         <tr>
             <td align="right" colspan="3" style="padding-top: 10px"><spring:button>Add</spring:button></td>
@@ -53,6 +53,8 @@
         <tr><td colspan="2" align="right"><button>Find</button></td></tr>
     </form>
 </table>
+<span style="padding-left: 25px"><sec:authentication property="principal.username"/>
+<sec:authentication property="principal.authorities"/></span>
 <br/>
 <br/>
 <a href="${contextPath}/logout" style="padding-left: 120px">LogOut</a>

@@ -37,7 +37,7 @@
         </tr>
 
         <tr>
-            <td><h4 align="center"><a href="${contextPath}/registration" style="color: cadetblue; font-size: 12px">Create an account</a></h4></td>
+            <td align="center"><a href="${contextPath}/registration"style="color: cadetblue; text-decoration: none; font-size: 16px">Create an account</a></td>
         </tr>
 
     </form>

@@ -21,14 +21,14 @@
 
         <spring:bind path="login">
             <tr>
-                <td align="center"><form:input cssStyle="font-size: 15px" type="text" path="login" placeholder="Login" autofocus="true"/></td>
+                <td align="center"><form:input cssStyle="font-size: 15px" type="text" path="login" placeholder="Login" autofocus="true" required="required"/></td>
             </tr>
 
         </spring:bind>
 
         <spring:bind path="password">
             <tr>
-                <td align="center" style="padding-top: 5px"><form:input cssStyle="font-size: 15px" type="password" path="password" placeholder="Password"/></td>
+                <td align="center" style="padding-top: 5px"><form:input cssStyle="font-size: 15px" type="password" path="password" placeholder="Password" required="required"/></td>
             </tr>
         </spring:bind>
 
@@ -38,6 +38,7 @@
                 <button type="submit" style="height: 25px; width: 60px; font-family: monospace; font-size: 13px">Create</button>
             </td>
         </tr>
+        <tr><td style="padding-top: 20px"><a href="${contextPath}" style="color: cadetblue; font-size: 14px; text-decoration: none; padding-left: 5px">Go back...</a></td></tr>
     </form:form></table>
 </body>
 </html>
