@@ -1,5 +1,7 @@
 # SpringSecurityCRUD-App
 
+https://travis-ci.org/kyivhunta/SpringSecurityCRUD-App.svg?branch=master
+
 - Used xml and classes spring configurations:
 SpringMVC(xml), DataBase(xml), SpringSecurity(classes).
 
