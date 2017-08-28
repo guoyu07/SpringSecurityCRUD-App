@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import ua.spring.app.entity.User;
+import ua.spring.app.service.AutoLoginService;
 import ua.spring.app.service.UserService;
 
 @Controller
@@ -13,6 +14,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private AutoLoginService autoLoginService;
 
 
     @GetMapping
@@ -26,7 +30,7 @@ public class UserController {
     @PostMapping
     public String addUser(@ModelAttribute("userForRegist") User user) {
         userService.saveUser(user);
-
-        return "redirect:/login";
+        autoLoginService.autoLogin(user.getLogin(),user.getPassword());
+        return "redirect:/products";
     }
 }
