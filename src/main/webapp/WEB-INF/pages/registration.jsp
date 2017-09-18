@@ -17,19 +17,22 @@
 <body>
 <table align="center" style="padding-top: 10%; font-family: monospace">
     <form:form action="${contextPath}/registration" method="POST" modelAttribute="userForRegist">
-        <tr><td><h2 align="center" style=" font-size: 20px; ">Create your account</h2></td></tr>
-
+        <tr><td><h2 align="center" style=" font-size: 20px;">Create your account</h2></td></tr>
+        <tr><td><span style="font: 13px Arial; color: green;  padding-left: 8px">${message}</span></td></tr>
+        <tr><td><span style="font: 13px Arial; color: red"><form:errors path="login"></form:errors></span></td></tr>
+        <tr><td><span style="font: 13px Arial; color: red"><form:errors path="password"></form:errors></span></td></tr>
         <spring:bind path="login">
-            <tr>
-                <td align="center"><form:input cssStyle="font-size: 15px" type="text" path="login" placeholder="Login" autofocus="true" required="required"/></td>
-            </tr>
 
+            <tr>
+            <td align="center"><form:input cssStyle="font-size: 15px" type="text" path="login" placeholder="Login" autofocus="true" required="required"/></td>
+            </tr>
         </spring:bind>
 
         <spring:bind path="password">
             <tr>
                 <td align="center" style="padding-top: 5px"><form:input cssStyle="font-size: 15px" type="password" path="password" placeholder="Password" required="required"/></td>
             </tr>
+
         </spring:bind>
 
 

@@ -1,65 +1,66 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:aop="http://www.springframework.org/schema/aop"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"-->
+       <!--xmlns:aop="http://www.springframework.org/schema/aop"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+       <!--http://www.springframework.org/schema/beans/spring-beans.xsd-->
+       <!--http://www.springframework.org/schema/mvc-->
+       <!--http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">-->
 
-    <mvc:annotation-driven/>
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!--<mvc:annotation-driven/>-->
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
 
-    <!--<aop:config proxy-target-class="true"/>-->
+    <!--&lt;!&ndash;<aop:config proxy-target-class="true"/>&ndash;&gt;-->
 
-    <!--<bean id="dao" class="ua.spring.app.dao.DaoImpl">-->
-    <!--<property name="sessionFactory" ref="mySessionFactory"/>-->
+    <!--&lt;!&ndash;<bean id="dao" class="ua.spring.app.dao.DaoImpl">&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="sessionFactory" ref="mySessionFactory"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="dataSource" ref="datasource"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="packagesToScan" value="main.java.ua.spring.app.entity"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="jpaVendorAdapter">&ndash;&gt;-->
+    <!--&lt;!&ndash;<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</property>&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="jpaProperties">&ndash;&gt;-->
+    <!--&lt;!&ndash;<props>&ndash;&gt;-->
+    <!--&lt;!&ndash;<prop key="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</prop>&ndash;&gt;-->
+    <!--&lt;!&ndash;<prop key="hibernate.show_sql">true</prop>&ndash;&gt;-->
+    <!--&lt;!&ndash;</props>&ndash;&gt;-->
+    <!--&lt;!&ndash;</property>&ndash;&gt;-->
+    <!--&lt;!&ndash;<property name="persistenceUnitName" value="unit1"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
+
+    <!--<bean id="mySessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">-->
+        <!--<property name="dataSource" ref="datasource"/>-->
+        <!--<property name="packagesToScan" value="ua.spring.app.entity"/>-->
+        <!--<property name="hibernateProperties">-->
+            <!--<props>-->
+                <!--<prop key="c3p0.acquire_increment">1</prop>-->
+                <!--<prop key="hibernate.c3p0.min_size" >2</prop>-->
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</prop>-->
+                <!--<prop key="hibernate.show_sql">true</prop>-->
+                <!--<prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>-->
+            <!--</props>-->
+        <!--</property>-->
     <!--</bean>-->
 
-    <!--<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
-    <!--<property name="dataSource" ref="datasource"/>-->
-    <!--<property name="packagesToScan" value="main.java.ua.spring.app.entity"/>-->
-    <!--<property name="jpaVendorAdapter">-->
-    <!--<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>-->
-    <!--</property>-->
-    <!--<property name="jpaProperties">-->
-    <!--<props>-->
-    <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</prop>-->
-    <!--<prop key="hibernate.show_sql">true</prop>-->
-    <!--</props>-->
-    <!--</property>-->
-    <!--<property name="persistenceUnitName" value="unit1"/>-->
+
+    <!--<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">-->
+        <!--<property name="sessionFactory" ref="mySessionFactory"/>-->
     <!--</bean>-->
 
-    <bean id="mySessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-        <property name="dataSource" ref="datasource"/>
-        <property name="packagesToScan" value="ua.spring.app.entity"/>
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.c3p0.min_size" >2</prop>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>
-            </props>
-        </property>
-    </bean>
+    <!--<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">-->
+        <!--<property name="driverClassName" value="${jdbc.driverClass}"/>-->
+        <!--<property name="url" value="${jdbc.url}"/>-->
+        <!--<property name="username" value="${jdbc.userName}"/>-->
+        <!--<property name="password" value="${jdbc.password}"/>-->
+    <!--</bean>-->
 
+    <!--<bean id="propertyConfigurer"-->
+          <!--class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--<property name="location" value="classpath:database.properties"/>-->
+    <!--</bean>-->
 
-    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-        <property name="sessionFactory" ref="mySessionFactory"/>
-    </bean>
-
-    <bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="${jdbc.driverClass}"/>
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.userName}"/>
-        <property name="password" value="${jdbc.password}"/>
-    </bean>
-
-    <bean id="propertyConfigurer"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:database.properties"/>
-    </bean>
-
-</beans>
+<!--</beans>-->

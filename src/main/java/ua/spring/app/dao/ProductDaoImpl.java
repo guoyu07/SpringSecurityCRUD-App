@@ -12,9 +12,12 @@ import java.util.List;
 @Repository
 public class ProductDaoImpl implements ProductDao {
 
-    @Autowired
     private SessionFactory sessionFactory;
 
+    @Autowired
+    public ProductDaoImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;

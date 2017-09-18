@@ -1,6 +1,5 @@
 package ua.spring.app.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import ua.spring.app.entity.Product;
 import ua.spring.app.service.ProductService;
-
 
 @Controller
 @RequestMapping("/products")
@@ -71,7 +69,12 @@ public class ProductController {
     @ResponseBody
     public Product searchById(@ModelAttribute("id") int id) {
         Product product = productService.read(id);
-        if (product==null)return new Product("Product with id: "+id+" dont exist!","Product with id: "+id+" dont exist!",0,"Product with id: "+id+" dont exist!");
+        if (product == null) {
+            return new Product("Product with id: " + id + " dont exist!",
+                               "Product with id: " + id + " dont exist!", 0,
+                               "Product with id: " + id + " dont exist!");
+        }
+
         return product;
     }
 

@@ -53,7 +53,7 @@
         <tr><td colspan="2" align="right"><button>Find</button></td></tr>
     </form>
 </table>
-<span style="padding-left: 3px">Вы ввошли как: <sec:authentication property="principal.username"/></span>
+<span style="padding-left: 3px">Вы вошли как: <sec:authentication property="principal.username"/></span>
 <br/>
 <br/>
 <a href="${contextPath}/logout" style="padding-left: 120px">LogOut</a>
