@@ -13,7 +13,7 @@ import java.util.Properties;
 
 @Configuration
 @ComponentScan({"ua.spring.app.dao","ua.spring.app.service"})
-@PropertySource("classpath*:database.properties")
+@PropertySource("database.properties")
 @EnableTransactionManagement
 public class DataBaseConfig {
 
